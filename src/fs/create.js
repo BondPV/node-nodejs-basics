@@ -1,8 +1,12 @@
 import fs from 'fs/promises';
 import path from 'node:path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const create = async () => {
-    const folderPath = path.join('src', 'fs', 'files');
+    const folderPath = path.join(__dirname, 'files');
     const filePath = path.join(folderPath, 'fresh.txt');
     const content = 'I am fresh and young';
 
